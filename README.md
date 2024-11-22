@@ -27,4 +27,11 @@ npm run dev
 ```sh
 npm run build
 ```
-"# capacitorjs-test" 
+
+"# capacitorjs-test"
+
+### 要在 Android Studio 中開啟 Android Capacitor 項目，您可以運行：
+
+```sh
+npx cap open android
+```

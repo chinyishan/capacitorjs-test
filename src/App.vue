@@ -1,12 +1,32 @@
-<script setup>
-import TheHeader from './components/TheHeader.vue'
-</script>
-
 <template>
-  <TheHeader/>
-  <router-view></router-view>
+  <div>
+    <h1>Geolocation</h1>
+    <p>Your location is:</p>
+    <p>Latitude: {{ loc.lat }}</p>
+    <p>Longitude: {{ loc.long }}</p>
+
+    <button @click="getCurrentPosition">Get Current Location</button>
+  </div>
 </template>
 
-<style scoped>
+<script>
+import { defineComponent, ref } from 'vue';
+import { Geolocation } from '@capacitor/geolocation';
+export default defineComponent({
+  setup() {
+    const loc = ref({
+      lat: null,
+      long: null,
+    });
 
-</style>
+    const getCurrentPosition = async () => {
+      const pos = await Geolocation.getCurrentPosition();
+      loc.value = {
+        lat: pos.coords.latitude,
+        long: pos.coords.longitude,
+      };
+    };
+    return { getCurrentPosition, loc };
+  },
+});
+</script>
