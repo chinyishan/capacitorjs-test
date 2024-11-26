@@ -10,10 +10,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      // fs: 'pdfkit/js/virtual-fs.js',
-      // 'iconv-lite': false,
-      //  path: 'path-browserify',
-      // 'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
     },
+  },
+  build: {
+    chunkSizeWarningLimit: 1000, // 将限制设置为 1000 kB
   },
 });
