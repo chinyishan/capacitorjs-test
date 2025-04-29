@@ -1,4 +1,4 @@
-#【測試】使用 Capacitor + Vue 嘗試製作 App
+# 【測試】使用 Capacitor + Vue 嘗試製作 App
 
 本專案為個人學習測試，嘗試以 Capacitor 搭配 Vue 框架進行跨平台 App 開發，目前仍在研究與實驗階段，尚未完成正式打包。
 
